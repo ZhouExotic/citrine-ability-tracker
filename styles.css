@@ -1,84 +1,118 @@
-/* General styling */
 body {
     background-color: #121212;
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
-/* Header */
-.header {
-    background-color: #FF8C00;
-    text-align: center;
+/* Sidebar for total citrine */
+#total-citrine-sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #1e1e1e;
     padding: 20px;
-    color: #fff;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#total-citrine-sidebar h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#total-citrine {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+/* Main container for content and tabs */
+.main-container {
+    margin-left: 270px;
+    padding: 20px;
+    width: 100%;
 }
 
 h1 {
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #ff9800;
+    padding: 10px;
     margin: 0;
 }
 
-.section {
-    margin: 20px;
-    padding: 20px;
-}
-
-.section h2 {
-    color: #FF8C00;
-    border-bottom: 1px solid #FF8C00;
-    padding-bottom: 5px;
-}
-
-/* Ability Grouping */
-.ability-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.ability-box {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    width: 150px;
-    padding: 10px;
-    margin: 10px;
+/* Path tabs */
+.path-tabs {
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 20px;
 }
 
-.ability-box input {
-    margin-top: 10px;
-    padding: 5px;
-    width: 60px;
-    text-align: center;
-    border: 1px solid #FF8C00;
-    border-radius: 4px;
-    background-color: #2c2c2c;
-    color: #ffffff;
-}
-
-.citrine-label {
-    margin-top: 10px;
-    color: #FFD700; /* Citrine-like color */
-}
-
-/* Adjust the button styles */
-button {
-    padding: 10px;
+.tab-button {
+    padding: 10px 20px;
     background-color: #388E3C;
     color: #ffffff;
     border: none;
     border-radius: 4px;
+    margin: 0 5px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-button:hover {
+.tab-button.active {
     background-color: #2e7d32;
+}
+
+.tab-button:hover {
+    background-color: #2e7d32;
+}
+
+/* Content container for abilities */
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Ability box styling */
+.ability-box {
+    background-color: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: calc(33.333% - 20px);
+    text-align: center;
+    color: #ffffff;
+}
+
+.ability-box input[type="number"] {
+    margin-top: 10px;
+    width: 60px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #333;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.citrine-label {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffc107;
+}
+
+/* Tighten the layout */
+.ability-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }

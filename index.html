@@ -7,13 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
+    <!-- Sidebar for total citrine -->
+    <aside id="total-citrine-sidebar">
+        <h2>Total Citrine</h2>
+        <div id="total-citrine">0</div>
+    </aside>
+
+    <!-- Main container for the content and tabs -->
+    <div class="main-container">
         <h1>Citrine Ability Tracker</h1>
-    </div>
-    
-    <!-- Main container for abilities and cultivation stages -->
-    <div class="content-container">
-        <!-- This will be dynamically populated by JavaScript -->
+
+        <!-- Tabs for path selection -->
+        <div class="path-tabs">
+            <button class="tab-button active" data-path="Magicka">Magicka</button>
+            <button class="tab-button" data-path="Corporia">Corporia</button>
+            <button class="tab-button" data-path="Swordia">Swordia</button>
+        </div>
+
+        <!-- Content container where abilities will be displayed -->
+        <div class="content-container"></div>
     </div>
 
     <script src="scripts/script.js"></script>
