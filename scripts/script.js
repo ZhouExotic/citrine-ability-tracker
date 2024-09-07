@@ -50,14 +50,14 @@ function displayAbilities(abilitiesData) {
 const breakthroughBooks = {
     0: 0,
     20: 4,
-    30: 10,
-    40: 18,
-    50: 32,
-    60: 52,
-    70: 78,
-    80: 113,
-    90: 153,
-    100: 198
+    30: 6,
+    40: 8,
+    50: 14,
+    60: 20,
+    70: 26,
+    80: 35,
+    90: 40,
+    100: 45
 };
 
 // Citrine cost per book by cultivation stage
