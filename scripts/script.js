@@ -82,10 +82,18 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
     const mainContainer = document.querySelector('.content-container');
     mainContainer.innerHTML = ''; // Clear the content container
 
+    console.log(`Selected Path: ${selectedPath}`);
+    console.log('Abilities:', abilities);
+    console.log('Cultivation Stages:', cultivationStages);
+    console.log('Breakthroughs:', breakthroughs);
+
     // Filter abilities by selected path
     const pathAbilities = abilities.filter(ability => ability.path === selectedPath);
+    console.log(`Filtered Abilities for ${selectedPath}:`, pathAbilities);
 
     cultivationStages.forEach((stage) => {
+        console.log(`Processing cultivation stage: ${stage.name}`);
+
         // Create a section for each stage
         const section = document.createElement('div');
         section.classList.add('section');
@@ -101,8 +109,11 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
         const stageAbilities = pathAbilities.filter(
             (ability) => ability.cultivationStage === stage.name
         );
+        console.log(`Abilities for stage "${stage.name}":`, stageAbilities);
 
         stageAbilities.forEach((ability) => {
+            console.log(`Displaying ability: ${ability.abilityName}`);
+
             const abilityBox = document.createElement('div');
             abilityBox.classList.add('ability-box');
 
@@ -126,6 +137,7 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
                 input.value,
                 breakthroughs
             );
+            console.log(`Initial Citrine cost for ${ability.abilityName} at level ${input.value}: ${currentCitrine}`);
             citrineLabel.textContent = `Citrine: ${currentCitrine}`;
 
             // Event listener for input change
@@ -136,6 +148,7 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
                     newLevel,
                     breakthroughs
                 );
+                console.log(`Updated Citrine cost for ${ability.abilityName} at level ${newLevel}: ${citrineCost}`);
 
                 citrineLabel.textContent = `Citrine: ${citrineCost}`;
                 localStorage.setItem(ability.abilityName, newLevel);
@@ -157,6 +170,8 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
         if (stageAbilities.length > 0) {
             section.appendChild(abilityGroup);
             mainContainer.appendChild(section);
+        } else {
+            console.log(`No abilities found for cultivation stage: ${stage.name}`);
         }
     });
 
