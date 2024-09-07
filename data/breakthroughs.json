@@ -1,6 +1,76 @@
 [
     {
-        "cultivationStage": "default",
+        "cultivationStage": "Connection",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Foundation",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Virtuoso",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Nascent",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Incarnation",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Incarnation extra",
         "breakthroughs": [
             { "level": 20, "books": 4 },
             { "level": 30, "books": 6 },
@@ -21,6 +91,174 @@
             { "level": 3, "books": 6 },
             { "level": 4, "books": 8 },
             { "level": 5, "books": 14 }
+        ]
+    },
+    {
+        "cultivationStage": "Voidbreak 1",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Voidbreak 1 - element",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Voidbreak 2",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Voidbreak 2 - element",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Wholeness 1",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Wholeness 1 - element",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Wholeness 2",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Wholeness 2 - element",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Perfection",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Perfection - element",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Nirvana",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
+        ]
+    },
+    {
+        "cultivationStage": "Nirvana - element",
+        "breakthroughs": [
+            { "level": 20, "books": 4 },
+            { "level": 30, "books": 6 },
+            { "level": 40, "books": 8 },
+            { "level": 50, "books": 14 },
+            { "level": 60, "books": 20 },
+            { "level": 70, "books": 26 },
+            { "level": 80, "books": 35 },
+            { "level": 90, "books": 40 },
+            { "level": 100, "books": 45 }
         ]
     }
 ]

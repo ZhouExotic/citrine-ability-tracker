@@ -42,18 +42,15 @@ function handleTabSwitching(abilities, cultivationStages, breakthroughs) {
 
 // Function to calculate citrine cost for a given ability level
 function calculateCitrineCost(ability, level, breakthroughs) {
-    // Check if it's Immortal's Will, which has a special breakthrough structure
-    const isImmortalsWill = ability.abilityName === 'Immortal\'s Will';
-
-    // Find the relevant breakthroughs based on whether it's Immortal's Will or not
+    // Find the relevant breakthroughs for the cultivation stage of the ability
     const stageBreakthroughs = breakthroughs.find(
-        (breakthrough) => breakthrough.cultivationStage === (isImmortalsWill ? 'Immortal\'s Will' : 'default')
+        (breakthrough) => breakthrough.cultivationStage === ability.cultivationStage
     );
 
-    // Log if no breakthroughs were found for debugging
+    // If no breakthroughs found for the given cultivation stage, return 0
     if (!stageBreakthroughs) {
         console.error(`No breakthroughs found for cultivation stage: ${ability.cultivationStage}`);
-        return 0;  // Return 0 if no breakthroughs are found
+        return 0;
     }
 
     // Log the citrinePerBook to ensure it's correct
