@@ -3,16 +3,18 @@ async function loadAbilities() {
     try {
         const abilitiesResponse = await fetch('data/abilities.json');
         const abilities = await abilitiesResponse.json();
+        console.log("Abilities loaded:", abilities);
 
         const cultivationStagesResponse = await fetch('data/cultivationstages.json');
         const cultivationStages = await cultivationStagesResponse.json();
+        console.log("Cultivation Stages loaded:", cultivationStages);
 
         const breakthroughsResponse = await fetch('data/breakthroughs.json');
         const breakthroughs = await breakthroughsResponse.json();
+        console.log("Breakthroughs loaded:", breakthroughs);
 
-        // Default to Magicka
-        displayAbilities(abilities, cultivationStages, breakthroughs, 'Magicka');
-        handleTabSwitching(abilities, cultivationStages, breakthroughs);
+        // Function to display abilities dynamically
+        displayAbilities(abilities, cultivationStages, breakthroughs);
     } catch (error) {
         console.error("Failed to load abilities:", error);
     }
