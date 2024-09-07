@@ -1,6 +1,6 @@
 [
     {
-        "cultivationStage": "Default",
+        "cultivationStage": "default",
         "breakthroughs": [
             { "level": 20, "books": 4 },
             { "level": 30, "books": 6 },

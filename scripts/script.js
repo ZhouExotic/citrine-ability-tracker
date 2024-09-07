@@ -42,24 +42,49 @@ function handleTabSwitching(abilities, cultivationStages, breakthroughs) {
 
 // Function to calculate citrine cost for a given ability level
 function calculateCitrineCost(ability, level, breakthroughs) {
+    // Check if it's Immortal's Will, which has a special breakthrough structure
+    const isImmortalsWill = ability.abilityName === 'Immortal\'s Will';
+
+    // Find the relevant breakthroughs based on whether it's Immortal's Will or not
     const stageBreakthroughs = breakthroughs.find(
-        (breakthrough) => breakthrough.cultivationStage === ability.cultivationStage
+        (breakthrough) => breakthrough.cultivationStage === (isImmortalsWill ? 'Immortal\'s Will' : 'default')
     );
 
+    // Log if no breakthroughs were found for debugging
     if (!stageBreakthroughs) {
-        return 0;
+        console.error(`No breakthroughs found for cultivation stage: ${ability.cultivationStage}`);
+        return 0;  // Return 0 if no breakthroughs are found
     }
+
+    // Log the citrinePerBook to ensure it's correct
+    if (!ability.citrinePerBook) {
+        console.error(`No citrinePerBook defined for ability: ${ability.abilityName}`);
+        return 0; // Return 0 if no citrine per book value is defined
+    }
+
+    console.log(`Calculating citrine cost for ability: ${ability.abilityName} at level ${level}`);
+    console.log(`Citrine per book: ${ability.citrinePerBook}`);
+    console.log(`Breakthroughs for stage:`, stageBreakthroughs);
 
     let totalBooks = 0;
 
+    // Iterate through each breakthrough and accumulate the total books needed
     stageBreakthroughs.breakthroughs.forEach((breakthrough) => {
         if (level >= breakthrough.level) {
             totalBooks += breakthrough.books;
         }
     });
 
-    return totalBooks * ability.citrinePerBook;
+    // Log the total books calculated
+    console.log(`Total books needed: ${totalBooks}`);
+
+    // Calculate the total citrine cost by multiplying books by citrinePerBook
+    const totalCitrine = totalBooks * ability.citrinePerBook;
+    console.log(`Total citrine cost for ${ability.abilityName} at level ${level}: ${totalCitrine}`);
+
+    return totalCitrine;
 }
+
 
 // Function to calculate and update total citrine cost
 function updateTotalCitrine() {
