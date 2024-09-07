@@ -13,11 +13,9 @@ async function loadAbilities() {
         const breakthroughs = await breakthroughsResponse.json();
         console.log("Breakthroughs loaded:", breakthroughs);
 
-        // Initialize tab switching logic after loading abilities
+        // Function to display abilities dynamically
+        displayAbilities(abilities, cultivationStages, breakthroughs, 'Magicka'); // Default to Magicka path
         handleTabSwitching(abilities, cultivationStages, breakthroughs);
-
-        // Optionally, load a default path, such as 'Magicka'
-        displayAbilities(abilities, cultivationStages, breakthroughs, 'Magicka');
     } catch (error) {
         console.error("Failed to load abilities:", error);
     }
@@ -34,54 +32,35 @@ function handleTabSwitching(abilities, cultivationStages, breakthroughs) {
 
             // Get the path from the button and display relevant abilities
             const selectedPath = this.dataset.path;
-            console.log("Selected Path:", selectedPath);
             displayAbilities(abilities, cultivationStages, breakthroughs, selectedPath);
         });
     });
 }
 
 // Function to calculate citrine cost for a given ability level
-function calculateCitrineCost(ability, level, breakthroughs) {
-    // Find the relevant breakthroughs for the cultivation stage of the ability
+function calculateCitrineCost(ability, level, breakthroughs, cultivationStages) {
     const stageBreakthroughs = breakthroughs.find(
         (breakthrough) => breakthrough.cultivationStage === ability.cultivationStage
     );
+    const cultivationStageData = cultivationStages.find(
+        (stage) => stage.cultivationStage === ability.cultivationStage
+    );
 
-    // If no breakthroughs found for the given cultivation stage, return 0
-    if (!stageBreakthroughs) {
-        console.error(`No breakthroughs found for cultivation stage: ${ability.cultivationStage}`);
+    if (!stageBreakthroughs || !cultivationStageData) {
         return 0;
     }
 
-    // Log the citrinePerBook to ensure it's correct
-    if (!ability.citrinePerBook) {
-        console.error(`No citrinePerBook defined for ability: ${ability.abilityName}`);
-        return 0; // Return 0 if no citrine per book value is defined
-    }
-
-    console.log(`Calculating citrine cost for ability: ${ability.abilityName} at level ${level}`);
-    console.log(`Citrine per book: ${ability.citrinePerBook}`);
-    console.log(`Breakthroughs for stage:`, stageBreakthroughs);
-
     let totalBooks = 0;
 
-    // Iterate through each breakthrough and accumulate the total books needed
     stageBreakthroughs.breakthroughs.forEach((breakthrough) => {
         if (level >= breakthrough.level) {
             totalBooks += breakthrough.books;
         }
     });
 
-    // Log the total books calculated
-    console.log(`Total books needed: ${totalBooks}`);
-
-    // Calculate the total citrine cost by multiplying books by citrinePerBook
-    const totalCitrine = totalBooks * ability.citrinePerBook;
-    console.log(`Total citrine cost for ${ability.abilityName} at level ${level}: ${totalCitrine}`);
-
-    return totalCitrine;
+    // Use the citrinePerBook from the correct cultivation stage
+    return totalBooks * cultivationStageData.citrinePerBook;
 }
-
 
 // Function to calculate and update total citrine cost
 function updateTotalCitrine() {
@@ -93,9 +72,10 @@ function updateTotalCitrine() {
         const abilityLevel = parseInt(input.value);
         const abilityData = input.dataset.abilityData ? JSON.parse(input.dataset.abilityData) : null;
         const breakthroughs = input.dataset.breakthroughs ? JSON.parse(input.dataset.breakthroughs) : null;
+        const cultivationStages = input.dataset.cultivationStages ? JSON.parse(input.dataset.cultivationStages) : null;
 
-        if (abilityData && breakthroughs) {
-            const citrineCost = calculateCitrineCost(abilityData, abilityLevel, breakthroughs);
+        if (abilityData && breakthroughs && cultivationStages) {
+            const citrineCost = calculateCitrineCost(abilityData, abilityLevel, breakthroughs, cultivationStages);
             totalCitrine += citrineCost;
         }
     });
@@ -120,7 +100,7 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
     cultivationStages.forEach((stage) => {
         console.log(`Processing cultivation stage: ${stage.cultivationStage}`);
 
-        // Create a section for each stage
+        // Create a section for each cultivation stage
         const section = document.createElement('div');
         section.classList.add('section');
 
@@ -131,7 +111,7 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
         const abilityGroup = document.createElement('div');
         abilityGroup.classList.add('ability-group');
 
-        // Get the abilities that belong to this stage and path
+        // Get the abilities that belong to this cultivation stage and path
         const stageAbilities = pathAbilities.filter(
             (ability) => ability.cultivationStage === stage.cultivationStage
         );
@@ -155,13 +135,15 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
             input.dataset.ability = ability.abilityName;
             input.dataset.abilityData = JSON.stringify(ability);
             input.dataset.breakthroughs = JSON.stringify(breakthroughs);
+            input.dataset.cultivationStages = JSON.stringify(cultivationStages); // Pass cultivation stages data
 
             const citrineLabel = document.createElement('span');
             citrineLabel.classList.add('citrine-label');
             const currentCitrine = calculateCitrineCost(
                 ability,
                 input.value,
-                breakthroughs
+                breakthroughs,
+                cultivationStages
             );
             console.log(`Initial Citrine cost for ${ability.abilityName} at level ${input.value}: ${currentCitrine}`);
             citrineLabel.textContent = `Citrine: ${currentCitrine}`;
@@ -172,7 +154,8 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
                 const citrineCost = calculateCitrineCost(
                     ability,
                     newLevel,
-                    breakthroughs
+                    breakthroughs,
+                    cultivationStages
                 );
                 console.log(`Updated Citrine cost for ${ability.abilityName} at level ${newLevel}: ${citrineCost}`);
 
