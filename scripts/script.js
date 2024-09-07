@@ -13,8 +13,11 @@ async function loadAbilities() {
         const breakthroughs = await breakthroughsResponse.json();
         console.log("Breakthroughs loaded:", breakthroughs);
 
-        // Function to display abilities dynamically
-        displayAbilities(abilities, cultivationStages, breakthroughs, selectedPath);
+        // Initialize tab switching logic after loading abilities
+        handleTabSwitching(abilities, cultivationStages, breakthroughs);
+
+        // Optionally, load a default path, such as 'Magicka'
+        displayAbilities(abilities, cultivationStages, breakthroughs, 'Magicka');
     } catch (error) {
         console.error("Failed to load abilities:", error);
     }
@@ -31,6 +34,7 @@ function handleTabSwitching(abilities, cultivationStages, breakthroughs) {
 
             // Get the path from the button and display relevant abilities
             const selectedPath = this.dataset.path;
+            console.log("Selected Path:", selectedPath);
             displayAbilities(abilities, cultivationStages, breakthroughs, selectedPath);
         });
     });
