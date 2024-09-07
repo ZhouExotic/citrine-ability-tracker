@@ -1,47 +1,40 @@
-body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
 /* Sidebar for total citrine */
 #total-citrine-sidebar {
-    position: sticky;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 20px;
+    left: 20px;
     width: 250px;
     background-color: #1e1e1e;
     padding: 20px;
-    height: 100vh;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
 }
 
 #total-citrine-sidebar h2 {
-    color: #ffffff;
+    font-size: 18px;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 
 #total-citrine {
     font-size: 24px;
     font-weight: bold;
-    color: #ffc107;
+    color: #ffcc00;
 }
 
-/* Main container for content and tabs */
+/* Main container for content */
 .main-container {
-    margin-left: 270px;
+    margin-left: 300px;  /* Adjust for the sidebar */
     padding: 20px;
-    width: 100%;
+    width: calc(100% - 320px);  /* Adjust for the sidebar */
 }
 
 h1 {
     font-size: 28px;
     text-align: center;
     color: #ffffff;
-    background-color: #ff9800;
+    background-color: #333;
     padding: 10px;
     margin: 0;
 }
@@ -106,13 +99,5 @@ h1 {
     display: block;
     margin-top: 10px;
     font-size: 14px;
-    color: #ffc107;
-}
-
-/* Tighten the layout */
-.ability-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    color: #ffcc00;
 }

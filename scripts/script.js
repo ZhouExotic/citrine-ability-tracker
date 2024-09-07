@@ -4,7 +4,7 @@ async function loadAbilities() {
         const abilities = await abilitiesResponse.json();
 
         const cultivationStagesResponse = await fetch('data/cultivationstages.json');
-        const cultivationStages = await cultivationStagesResponse.json();
+        const cultivationStages = await fetch('data/cultivationstages.json').then(res => res.json());
 
         const breakthroughsResponse = await fetch('data/breakthroughs.json');
         const breakthroughs = await breakthroughsResponse.json();
@@ -17,6 +17,10 @@ async function loadAbilities() {
 }
 
 function calculateCitrineCost(ability, level, breakthroughs) {
+    if (!ability || !level || isNaN(level)) {
+        return 0;  // Return 0 if any part of the input is invalid
+    }
+
     const stageBreakthroughs = breakthroughs.find(b => b.cultivationStage === ability.cultivationStage);
     let totalBooks = 0;
 
@@ -28,7 +32,8 @@ function calculateCitrineCost(ability, level, breakthroughs) {
         });
     }
 
-    return totalBooks * ability.citrinePerBook;
+    const costPerBook = ability.citrinePerBook || 0;  // Avoid undefined values
+    return totalBooks * costPerBook;
 }
 
 function displayAbilities(abilities, breakthroughs) {
@@ -46,16 +51,26 @@ function displayAbilities(abilities, breakthroughs) {
         input.type = 'number';
         input.min = 0;
         input.max = ability.maxLevel;
+        input.step = 10;  // Ensure the input increments by 10
         input.value = localStorage.getItem(ability.abilityName) || 0;
         input.dataset.ability = ability.abilityName;
 
         const citrineLabel = document.createElement('span');
         citrineLabel.classList.add('citrine-label');
-        const currentCitrine = calculateCitrineCost(ability, input.value, breakthroughs);
+        const currentCitrine = calculateCitrineCost(ability, parseInt(input.value), breakthroughs);
         citrineLabel.textContent = `Citrine: ${currentCitrine}`;
 
         input.addEventListener('input', function () {
-            const newLevel = parseInt(input.value);
+            let newLevel = parseInt(input.value);
+
+            // Enforce the 0-100 step increments of 10
+            newLevel = Math.max(0, Math.min(newLevel, ability.maxLevel));
+            if (newLevel % 10 !== 0) {
+                newLevel = Math.round(newLevel / 10) * 10;
+            }
+
+            input.value = newLevel;
+
             const citrineCost = calculateCitrineCost(ability, newLevel, breakthroughs);
             citrineLabel.textContent = `Citrine: ${citrineCost}`;
 
@@ -98,7 +113,7 @@ function updateTotalCitrine(abilities, breakthroughs) {
         totalCitrine += calculateCitrineCost(ability, level, breakthroughs);
     });
 
-    document.getElementById('total-citrine').textContent = totalCitrine;
+    document.getElementById('total-citrine').textContent = `Total Citrine: ${totalCitrine}`;
 }
 
 window.addEventListener('DOMContentLoaded', loadAbilities);
