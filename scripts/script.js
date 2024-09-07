@@ -21,20 +21,25 @@ function calculateCitrineCost(ability, level, breakthroughs) {
         return 0;  // Return 0 if any part of the input is invalid
     }
 
+    // Get the breakthrough data for this ability's cultivation stage
     const stageBreakthroughs = breakthroughs.find(b => b.cultivationStage === ability.cultivationStage);
+
+    if (!stageBreakthroughs) {
+        return 0;  // Return 0 if no breakthroughs are found
+    }
+
     let totalBooks = 0;
 
-    if (stageBreakthroughs) {
-        stageBreakthroughs.breakthroughs.forEach(breakthrough => {
-            if (level >= breakthrough.level) {
-                totalBooks += breakthrough.books;
-            }
-        });
-    }
+    stageBreakthroughs.breakthroughs.forEach(breakthrough => {
+        if (level >= breakthrough.level) {
+            totalBooks = breakthrough.books; // This accumulates the correct number of books for this breakthrough level
+        }
+    });
 
     const costPerBook = ability.citrinePerBook || 0;  // Avoid undefined values
     return totalBooks * costPerBook;
 }
+
 
 function displayAbilities(abilities, breakthroughs) {
     const contentContainer = document.querySelector('.content-container');

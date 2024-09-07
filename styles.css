@@ -1,103 +1,111 @@
-/* Sidebar for total citrine */
-#total-citrine-sidebar {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    width: 250px;
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-}
-
-#total-citrine-sidebar h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-#total-citrine {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ffcc00;
-}
-
-/* Main container for content */
-.main-container {
-    margin-left: 300px;  /* Adjust for the sidebar */
-    padding: 20px;
-    width: calc(100% - 320px);  /* Adjust for the sidebar */
-}
-
-h1 {
-    font-size: 28px;
-    text-align: center;
-    color: #ffffff;
-    background-color: #333;
-    padding: 10px;
+/* Body styling for dark mode */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding: 20px;
+    line-height: 1.6;
 }
 
-/* Path tabs */
-.path-tabs {
-    text-align: center;
-    margin-top: 20px;
+/* Sidebar for total stats */
+#total-stats-sidebar {
+    position: sticky;
+    top: 20px;
+    width: 200px;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    margin-bottom: 20px;
 }
 
+/* Total Citrine styling */
+#total-citrine {
+    font-weight: bold;
+    color: #FFD700;  /* Gold color for citrine */
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* Tab button styling */
 .tab-button {
+    background-color: #388E3C; /* Dark green for active tabs */
+    color: white;
     padding: 10px 20px;
-    background-color: #388E3C;
-    color: #ffffff;
+    border-radius: 8px;
     border: none;
-    border-radius: 4px;
-    margin: 0 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    margin: 5px;
+    font-size: 16px;
 }
 
 .tab-button.active {
-    background-color: #2e7d32;
-}
-
-.tab-button:hover {
-    background-color: #2e7d32;
-}
-
-/* Content container for abilities */
-.content-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+    background-color: #4CAF50; /* Lighter green for the active tab */
 }
 
 /* Ability box styling */
 .ability-box {
-    background-color: #1e1e1e;
-    padding: 10px;
+    background-color: #1e1e1e;  /* Same dark background */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    width: calc(33.333% - 20px);
-    text-align: center;
-    color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.ability-box input[type="number"] {
-    margin-top: 10px;
-    width: 60px;
-    text-align: center;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #333;
-    border: none;
+/* Input styling */
+input[type="number"] {
+    background-color: #333;  /* Dark input background */
+    color: #fff;
+    border: 1px solid #555;  /* Slightly lighter border */
     border-radius: 4px;
+    width: 60px;
     padding: 5px;
+    margin: 5px 0;
 }
 
-.citrine-label {
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #ffcc00;
+/* Ability label */
+.ability-label {
+    font-weight: bold;
+    color: #FFD700; /* Gold color for ability names */
+}
+
+/* Ability group layout */
+.ability-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* General content layout */
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensure better layout with smaller gaps */
+    padding: 20px;
+}
+
+/* Headings for cultivation stages */
+h2 {
+    color: #FFD700;  /* Gold color for headers */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tightening up the layout */
+.ability-box {
+    margin: 5px; /* Less margin to make it more compact */
+}
+
+#total-stats-sidebar {
+    margin-right: 20px;
 }
