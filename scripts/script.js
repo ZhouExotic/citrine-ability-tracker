@@ -96,14 +96,14 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
     console.log(`Filtered Abilities for ${selectedPath}:`, pathAbilities);
 
     cultivationStages.forEach((stage) => {
-        console.log(`Processing cultivation stage: ${stage.name}`);
+        console.log(`Processing cultivation stage: ${stage.cultivationStage}`);
 
         // Create a section for each stage
         const section = document.createElement('div');
         section.classList.add('section');
 
         const stageHeader = document.createElement('h2');
-        stageHeader.textContent = stage.name;
+        stageHeader.textContent = stage.cultivationStage;
         section.appendChild(stageHeader);
 
         const abilityGroup = document.createElement('div');
@@ -111,9 +111,9 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
 
         // Get the abilities that belong to this stage and path
         const stageAbilities = pathAbilities.filter(
-            (ability) => ability.cultivationStage === stage.name
+            (ability) => ability.cultivationStage === stage.cultivationStage
         );
-        console.log(`Abilities for stage "${stage.name}":`, stageAbilities);
+        console.log(`Abilities for stage "${stage.cultivationStage}":`, stageAbilities);
 
         stageAbilities.forEach((ability) => {
             console.log(`Displaying ability: ${ability.abilityName}`);
@@ -175,7 +175,7 @@ function displayAbilities(abilities, cultivationStages, breakthroughs, selectedP
             section.appendChild(abilityGroup);
             mainContainer.appendChild(section);
         } else {
-            console.log(`No abilities found for cultivation stage: ${stage.name}`);
+            console.log(`No abilities found for cultivation stage: ${stage.cultivationStage}`);
         }
     });
 
