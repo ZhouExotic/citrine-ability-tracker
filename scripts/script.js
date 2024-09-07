@@ -14,7 +14,7 @@ async function loadAbilities() {
         console.log("Breakthroughs loaded:", breakthroughs);
 
         // Function to display abilities dynamically
-        displayAbilities(abilities, cultivationStages, breakthroughs);
+        displayAbilities(abilities, cultivationStages, breakthroughs, selectedPath);
     } catch (error) {
         console.error("Failed to load abilities:", error);
     }
