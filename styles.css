@@ -11,9 +11,9 @@ body {
 /* Headings for cultivation stages */
 h2 {
     color: #FFD700;  /* Gold color for headers */
-    font-size: 24px;
+    font-size: 14px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 h1 {
@@ -93,7 +93,7 @@ input[type="number"] {
     justify-content: center;
     color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 12px; /* Smaller font size */
+    font-size: 14px; /* Smaller font size */
     width: 100px; /* Adjust width as needed */
     height: auto; /* Adjust height to fit content */
 }
@@ -101,7 +101,7 @@ input[type="number"] {
 .ability-box span {
     display: block;
     margin-bottom: 5px;
-    font-size: 10px; /* Smaller text size for ability names */
+    font-size: 12px; /* Smaller text size for ability names */
 }
 
 .citrine-label {
