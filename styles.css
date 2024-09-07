@@ -8,20 +8,35 @@ body {
     line-height: 1.6;
 }
 
+h1 {
+    color: #ffc107;
+    text-align: center;
+}
+
 /* Tab button styling */
+.path-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
 .tab-button {
-    background-color: #388E3C; /* Dark green for active tabs */
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    margin: 5px;
-    font-size: 16px;
+    margin: 0 10px;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
 .tab-button.active {
-    background-color: #4CAF50; /* Lighter green for the active tab */
+    background-color: #388E3C;
+}
+
+.tab-button:hover {
+    background-color: #388E3C;
 }
 
 /* Ability box styling */
@@ -36,6 +51,24 @@ body {
     justify-content: center;
     color: #f0f0f0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Content container */
+.content-container {
+    width: 80%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* Headings for cultivation stages */
+h2 {
+    color: #FFD700;  /* Gold color for headers */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* Input styling */
@@ -63,45 +96,41 @@ input[type="number"] {
     gap: 20px;
 }
 
-/* General content layout */
-.content-container {
-    margin-left: 250px; /* Adjust based on the width of the sidebar */
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    background-color: #121212;
-    justify-content: space-between; /* Ensure better layout with smaller gaps */
-}
-
-
-/* Headings for cultivation stages */
-h2 {
-    color: #FFD700;  /* Gold color for headers */
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Tightening up the layout */
 .ability-box {
-    margin: 5px; /* Less margin to make it more compact */
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    width: 150px;
+    text-align: center;
 }
 
+.ability-box span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.citrine-label {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+/* Sidebar for total stats */
 #total-stats-sidebar {
-    position: fixed;
+    position: sticky;
     top: 20px;
-    left: 20px;
+    width: 200px;
     background-color: #1e1e1e;
     padding: 15px;
     border-radius: 8px;
     color: #fff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 16px;
-    width: 200px;
+    margin-bottom: 20px;
 }
 
 #total-citrine {
+    font-size: 18px;
     font-weight: bold;
-    color: #fdd835; /* Yellow text for total Citrine */
+    color: #ffc107;
 }
