@@ -23,18 +23,21 @@ function calculateCitrineCost(ability, level, breakthroughs) {
         (breakthrough) => breakthrough.cultivationStage === ability.cultivationStage
     );
 
+    if (!stageBreakthroughs) {
+        return 0; // Return 0 if no breakthroughs are found for the cultivation stage
+    }
+
     let totalBooks = 0;
 
-    if (stageBreakthroughs) {
-        stageBreakthroughs.breakthroughs.forEach((breakthrough) => {
-            if (level >= breakthrough.level) {
-                totalBooks += breakthrough.books;
-            }
-        });
-    }
+    stageBreakthroughs.breakthroughs.forEach((breakthrough) => {
+        if (level >= breakthrough.level) {
+            totalBooks += breakthrough.books;
+        }
+    });
 
     return totalBooks * ability.citrinePerBook;
 }
+
 
 // Function to calculate and update total citrine cost
 function updateTotalCitrine() {
@@ -55,6 +58,7 @@ function updateTotalCitrine() {
 
     document.getElementById('total-citrine').textContent = `Total Citrine: ${totalCitrine}`;
 }
+
 
 // Function to display abilities organized by cultivation stages
 function displayAbilities(abilities, cultivationStages, breakthroughs) {
@@ -89,11 +93,13 @@ function displayAbilities(abilities, cultivationStages, breakthroughs) {
             input.type = 'number';
             input.min = 0;
             input.max = ability.maxLevel;
-            input.step = 10; // Set step increments to 10
+            input.step = 10; // Step increments of 10
             input.value = localStorage.getItem(ability.abilityName) || 0;
             input.dataset.ability = ability.abilityName;
-            input.dataset.abilityData = JSON.stringify(ability);  // Attach ability data
-            input.dataset.breakthroughs = JSON.stringify(breakthroughs);  // Attach breakthroughs data
+
+            // Store ability data and breakthroughs in dataset
+            input.dataset.abilityData = JSON.stringify(ability);
+            input.dataset.breakthroughs = JSON.stringify(breakthroughs);
 
             const citrineLabel = document.createElement('span');
             citrineLabel.classList.add('citrine-label');
@@ -133,9 +139,11 @@ function displayAbilities(abilities, cultivationStages, breakthroughs) {
         mainContainer.appendChild(section);
     });
 
-    // Call updateTotalCitrine to ensure total citrine is accurate on load
+    // Ensure total citrine is calculated when the page loads
     updateTotalCitrine();
 }
+
+
 
 // Load abilities when the page loads
 window.addEventListener('DOMContentLoaded', loadAbilities);
