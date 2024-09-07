@@ -17,28 +17,26 @@ async function loadAbilities() {
     }
 }
 
-// Function to fetch the breakthroughs based on default and exceptions
-function getBooksForLevel(stage, level, breakthroughs) {
-    // Check if the stage has an exception
-    const stageBreakthroughs = breakthroughs.exceptions[stage] || breakthroughs.default;
-    
-    // Find the corresponding breakthrough for the given level
-    const matchingBreakthrough = stageBreakthroughs.find(b => level >= b.level);
-    
-    return matchingBreakthrough ? matchingBreakthrough.books : 0;
-}
-
 // Function to calculate citrine cost for a given ability level
-function calculateCitrineCost(ability, level, breakthroughs) {
+function calculateCitrineCost(ability, level, breakthroughs, cultivationStages) {
+    const stage = cultivationStages.find(stage => stage.stage === ability.cultivationStage);
+    const citrinePerBook = stage ? parseInt(stage.citrinePerBook) : 0;
+
+    const stageBreakthroughs = breakthroughs.find(
+        (breakthrough) => breakthrough.cultivationStage === ability.cultivationStage
+    );
+
     let totalBooks = 0;
 
-    // Loop through the level in increments of 10, getting the book requirement at each increment
-    for (let i = 0; i <= level; i += 10) {
-        const booksForLevel = getBooksForLevel(ability.cultivationStage, i, breakthroughs);
-        totalBooks += booksForLevel;
+    if (stageBreakthroughs) {
+        stageBreakthroughs.breakthroughs.forEach((breakthrough) => {
+            if (level >= breakthrough.level) {
+                totalBooks += breakthrough.books;
+            }
+        });
     }
 
-    return totalBooks * ability.citrinePerBook;
+    return totalBooks * citrinePerBook;
 }
 
 // Function to display abilities organized by cultivation stages
@@ -52,7 +50,7 @@ function displayAbilities(abilities, cultivationStages, breakthroughs) {
         section.classList.add('section');
 
         const stageHeader = document.createElement('h2');
-        stageHeader.textContent = stage.name;
+        stageHeader.textContent = stage.stage;
         section.appendChild(stageHeader);
 
         const abilityGroup = document.createElement('div');
@@ -60,7 +58,7 @@ function displayAbilities(abilities, cultivationStages, breakthroughs) {
 
         // Get the abilities that belong to this stage
         const stageAbilities = abilities.filter(
-            (ability) => ability.cultivationStage === stage.name
+            (ability) => ability.cultivationStage === stage.stage
         );
 
         stageAbilities.forEach((ability) => {
@@ -82,7 +80,8 @@ function displayAbilities(abilities, cultivationStages, breakthroughs) {
             const currentCitrine = calculateCitrineCost(
                 ability,
                 input.value,
-                breakthroughs
+                breakthroughs,
+                cultivationStages
             );
             citrineLabel.textContent = `Citrine: ${currentCitrine}`;
 
@@ -92,7 +91,8 @@ function displayAbilities(abilities, cultivationStages, breakthroughs) {
                 const citrineCost = calculateCitrineCost(
                     ability,
                     newLevel,
-                    breakthroughs
+                    breakthroughs,
+                    cultivationStages
                 );
 
                 citrineLabel.textContent = `Citrine: ${citrineCost}`;
