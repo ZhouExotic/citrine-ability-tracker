@@ -8,6 +8,14 @@ body {
     line-height: 1.6;
 }
 
+/* Headings for cultivation stages */
+h2 {
+    color: #FFD700;  /* Gold color for headers */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 h1 {
     color: #ffc107;
     text-align: center;
@@ -39,20 +47,6 @@ h1 {
     background-color: #388E3C;
 }
 
-/* Ability box styling */
-.ability-box {
-    background-color: #1e1e1e;  /* Same dark background */
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #f0f0f0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 /* Content container */
 .content-container {
     width: 80%;
@@ -60,15 +54,6 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-
-/* Headings for cultivation stages */
-h2 {
-    color: #FFD700;  /* Gold color for headers */
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 /* Input styling */
@@ -93,26 +78,35 @@ input[type="number"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 5px;
 }
 
+/* Ability box styling */
 .ability-box {
-    background-color: #1e1e1e;
+    background-color: #1e1e1e;  /* Same dark background */
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    width: 150px;
-    text-align: center;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 12px; /* Smaller font size */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Adjust height to fit content */
 }
 
 .ability-box span {
     display: block;
     margin-bottom: 5px;
+    font-size: 10px; /* Smaller text size for ability names */
 }
 
 .citrine-label {
     color: #ffc107;
-    font-weight: bold;
+    font-size: 12px; /* Smaller font for citrine label */
 }
 
 /* Sidebar for total stats */
