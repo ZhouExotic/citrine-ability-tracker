@@ -1,0 +1,597 @@
+[
+    {
+        "path": "Magicka",
+        "abilityName": "Sear",
+        "cultivationStage": "Connection",
+        "maxLevel": "20",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Thunderblitz",
+        "cultivationStage": "Connection",
+        "maxLevel": "20",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Paralysis Charm",
+        "cultivationStage": "Foundation",
+        "maxLevel": "40",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Third Eye",
+        "cultivationStage": "Foundation",
+        "maxLevel": "40",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Qi Blast",
+        "cultivationStage": "Virtuoso",
+        "maxLevel": "60",
+        "abilityType": "Debuff"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Spiritual Wall",
+        "cultivationStage": "Virtuoso",
+        "maxLevel": "60",
+        "abilityType": "Shield"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Pyrokinesis",
+        "cultivationStage": "Nascent",
+        "maxLevel": "80",
+        "abilityType": "Debuff"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Windwalker",
+        "cultivationStage": "Nascent",
+        "maxLevel": "80",
+        "abilityType": "Shield"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Hellfire",
+        "cultivationStage": "Incarnation extra",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Blizzard",
+        "cultivationStage": "Incarnation",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Eight Trigrams",
+        "cultivationStage": "Incarnation",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Phantasm",
+        "cultivationStage": "Incarnation extra",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Tonitrus",
+        "cultivationStage": "Voidbreak 1",
+        "maxLevel": "60",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Tonitrus - Metal",
+        "cultivationStage": "Voidbreak 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Tonitrus - Wood",
+        "cultivationStage": "Voidbreak 1 - element",
+        "maxLevel": "80",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Dragon Taming",
+        "cultivationStage": "Voidbreak 2",
+        "maxLevel": "80",
+        "abilityType": "Shield"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Dragon Taming - Wood",
+        "cultivationStage": "Voidbreak 2 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Dragon Taming - Water",
+        "cultivationStage": "Voidbreak 2 - element",
+        "maxLevel": "80",
+        "abilityType": "Shield"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Godslayer",
+        "cultivationStage": "Wholeness 1",
+        "maxLevel": "80",
+        "abilityType": "Debuff"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Godslayer - Water",
+        "cultivationStage": "Wholeness 1 - element",
+        "maxLevel": "80",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Godslayer - Fire",
+        "cultivationStage": "Wholeness 1 - element",
+        "maxLevel": "80",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Shimmer",
+        "cultivationStage": "Wholeness 2",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Shimmer - Fire",
+        "cultivationStage": "Wholeness 2 - element",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Shimmer - Earth",
+        "cultivationStage": "Wholeness 2 - element",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Cardinal Thunder",
+        "cultivationStage": "Perfection",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Cardinal Thunder - Earth",
+        "cultivationStage": "Perfection - element",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Cardinal Thunder - Metal",
+        "cultivationStage": "Perfection - element",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Deathfire",
+        "cultivationStage": "Nirvana",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Deathfire - Metal",
+        "cultivationStage": "Nirvana - element",
+        "maxLevel": "100",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Magicka",
+        "abilityName": "Deathfire - Wood",
+        "cultivationStage": "Nirvana - element",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Crushing Blow",
+        "cultivationStage": "Connection",
+        "maxLevel": "20",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Sky Piercer",
+        "cultivationStage": "Connection",
+        "maxLevel": "20",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Lumos",
+        "cultivationStage": "Foundation",
+        "maxLevel": "40",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Hearthack",
+        "cultivationStage": "Foundation",
+        "maxLevel": "40",
+        "abilityType": "Debuff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Dragonforms",
+        "cultivationStage": "Virtuoso",
+        "maxLevel": "60",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Death Touch",
+        "cultivationStage": "Virtuoso",
+        "maxLevel": "60",
+        "abilityType": "Debuff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "God's Fall",
+        "cultivationStage": "Nascent",
+        "maxLevel": "80",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Blaze Seal",
+        "cultivationStage": "Nascent",
+        "maxLevel": "80",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Demon's Trap",
+        "cultivationStage": "Incarnation extra",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Buddha's Palm",
+        "cultivationStage": "Incarnation",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Sunset Halberd",
+        "cultivationStage": "Incarnation",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Ruthless",
+        "cultivationStage": "Incarnation extra",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Vidyaraja's Palm",
+        "cultivationStage": "Voidbreak 1",
+        "maxLevel": "60",
+        "abilityType": "Debuff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Vidyaraja's Palm - Metal",
+        "cultivationStage": "Voidbreak 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Vidyaraja's Palm - Wood",
+        "cultivationStage": "Voidbreak 1 - element",
+        "maxLevel": "80",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Asura's Slash",
+        "cultivationStage": "Voidbreak 2",
+        "maxLevel": "80",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Asura's Slash - Wood",
+        "cultivationStage": "Voidbreak 2 - element",
+        "maxLevel": "80",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Asura's Slash - Water",
+        "cultivationStage": "Voidbreak 2 - element",
+        "maxLevel": "80",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Indestructible",
+        "cultivationStage": "Wholeness 1",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Indestructible - Water",
+        "cultivationStage": "Wholeness 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Indestructible - Fire",
+        "cultivationStage": "Wholeness 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Antideity",
+        "cultivationStage": "Wholeness 2",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Antideity - Fire",
+        "cultivationStage": "Wholeness 2 - element",
+        "maxLevel": "100",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Antideity - Earth",
+        "cultivationStage": "Wholeness 2 - element",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Stellar Slash",
+        "cultivationStage": "Perfection",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Stellar Slash - Earth",
+        "cultivationStage": "Perfection - element",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Stellar Slash - Metal",
+        "cultivationStage": "Perfection - element",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Golden Crow Fist",
+        "cultivationStage": "Nirvana",
+        "maxLevel": "100",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Golden Crow Fist - Metal",
+        "cultivationStage": "Nirvana - element",
+        "maxLevel": "100",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Corporia",
+        "abilityName": "Golden Crow Fist - Wood",
+        "cultivationStage": "Nirvana - element",
+        "maxLevel": "100",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "ALL",
+        "abilityName": "Immortal's Will",
+        "cultivationStage": "Immortal's Will",
+        "maxLevel": "5",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Tri-Strike",
+        "cultivationStage": "Connection",
+        "maxLevel": "20",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Thundershower",
+        "cultivationStage": "Connection",
+        "maxLevel": "20",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Cloudburst",
+        "cultivationStage": "Foundation",
+        "maxLevel": "40",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Gale",
+        "cultivationStage": "Foundation",
+        "maxLevel": "40",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Skyrise",
+        "cultivationStage": "Virtuoso",
+        "maxLevel": "60",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Myraisword - Ballad",
+        "cultivationStage": "Virtuoso",
+        "maxLevel": "60",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Sword Glare",
+        "cultivationStage": "Nascent",
+        "maxLevel": "80",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Myraisword - Peacebringer",
+        "cultivationStage": "Nascent",
+        "maxLevel": "80",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Myraisword - Sweep",
+        "cultivationStage": "Incarnation extra",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Shadowstrike",
+        "cultivationStage": "Incarnation",
+        "maxLevel": "100",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Sky Stealer",
+        "cultivationStage": "Incarnation",
+        "maxLevel": "100",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Myraisword - Unity",
+        "cultivationStage": "Incarnation extra",
+        "maxLevel": "100",
+        "abilityType": "Debuff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Stellar Impact",
+        "cultivationStage": "Voidbreak 1",
+        "maxLevel": "60",
+        "abilityType": "Single"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Skyfall",
+        "cultivationStage": "Voidbreak 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Myraisword - Twin Slash",
+        "cultivationStage": "Voidbreak 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Maelstrom",
+        "cultivationStage": "Voidbreak 2",
+        "maxLevel": "80",
+        "abilityType": "AoE"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Chainbane",
+        "cultivationStage": "Voidbreak 2 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Skyveil",
+        "cultivationStage": "Voidbreak 2 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Rainfall",
+        "cultivationStage": "Wholeness 1",
+        "maxLevel": "80",
+        "abilityType": "Control"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Voidblade",
+        "cultivationStage": "Wholeness 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Myraisword - Soulblade",
+        "cultivationStage": "Wholeness 1 - element",
+        "maxLevel": "80",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Skyshadow",
+        "cultivationStage": "Wholeness 2",
+        "maxLevel": "100",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Shadowbearer",
+        "cultivationStage": "Wholeness 2 - element",
+        "maxLevel": "100",
+        "abilityType": "Buff"
+    },
+    {
+        "path": "Swordia",
+        "abilityName": "Myraisword - Glidestrike",
+        "cultivationStage": "Wholeness 2 - element",
+        "maxLevel": "100",
+        "abilityType": "AoE"
+    }
+]
