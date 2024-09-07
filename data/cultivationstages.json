@@ -1,0 +1,78 @@
+[
+    {
+        "stage": "Connection",
+        "citrinePerBook": "100"
+    },
+    {
+        "stage": "Foundation",
+        "citrinePerBook": "150"
+    },
+    {
+        "stage": "Virtuoso",
+        "citrinePerBook": "240"
+    },
+    {
+        "stage": "Nascent",
+        "citrinePerBook": "280"
+    },
+    {
+        "stage": "Incarnation",
+        "citrinePerBook": "400"
+    },
+    {
+        "stage": "Incarnation extra",
+        "citrinePerBook": "450"
+    },
+    {
+        "stage": "Immortal's Will",
+        "citrinePerBook": "200"
+    },
+    {
+        "stage": "Voidbreak 1",
+        "citrinePerBook": "150"
+    },
+    {
+        "stage": "Voidbreak 1 - element",
+        "citrinePerBook": "200"
+    },
+    {
+        "stage": "Voidbreak 2",
+        "citrinePerBook": "200"
+    },
+    {
+        "stage": "Voidbreak 2 - element",
+        "citrinePerBook": "280"
+    },
+    {
+        "stage": "Wholeness 1",
+        "citrinePerBook": "280"
+    },
+    {
+        "stage": "Wholeness 1 - element",
+        "citrinePerBook": "400"
+    },
+    {
+        "stage": "Wholeness 2",
+        "citrinePerBook": "400"
+    },
+    {
+        "stage": "Wholeness 2 - element",
+        "citrinePerBook": "450"
+    },
+    {
+        "stage": "Perfection",
+        "citrinePerBook": "500"
+    },
+    {
+        "stage": "Perfection - element",
+        "citrinePerBook": "500"
+    },
+    {
+        "stage": "Nirvana",
+        "citrinePerBook": "500"
+    },
+    {
+        "stage": "Nirvana - element",
+        "citrinePerBook": "500"
+    }
+]

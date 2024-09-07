@@ -1,208 +1,84 @@
-/* Overall page style for better readability */
+/* General styling */
 body {
     background-color: #121212;
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    background-color: #FF8C00;
+    text-align: center;
     padding: 20px;
-    line-height: 1.6;
+    color: #fff;
 }
 
-/* Container for the table and sidebars */
-.content-container {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    padding: 0;
-}
-
-/* Styling for the sidebar */
-#summary-sidebar, #effects-sidebar {
-    position: sticky;
-    top: 20px;
-    width: 200px;
-    background-color: #1e1e1e;
-    color: #f0f0f0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
-    height: fit-content;
-    overflow-y: auto;
-    max-height: 80vh;
-}
-
-/* Ensure the button stays at the bottom of the summary sidebar */
-#summary-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-/* Container styling for the table */
-.table-container {
-    flex: 1;
-    overflow-x: auto;
-}
-
-/* Basic styling for the dark mode table */
-#techniques-table {
-    width: 100%;
-    min-width: 900px;
-    border-collapse: collapse;
-    margin: 10px auto;
-    font-size: 14px;
-    text-align: left;
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border: none;
-}
-
-/* Header styling */
-#techniques-table th {
-    background-color: #2c2c2c;
-    color: #ffffff;
-    padding: 8px;
-    border-bottom: 1px solid #444;
-    font-weight: bold;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-/* Cell styling with clickable effect */
-#techniques-table td {
-    padding: 6px;
-    border-bottom: 0px solid #444;
-    font-size: 13px;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background-color 0.3s, border 0.3s;
-}
-
-/* Style for marked cells when clicked - prioritize this style */
-#techniques-table td.marked {
-    background-color: #388E3C !important; /* Strong green fill to indicate marked state */
-    color: #ffffff !important;
-    border: 2px solid #2e7d32; /* Slightly darker border for marked cells */
-}
-
-/* Style for cells highlighted via sidebar search */
-#techniques-table td.effect-highlight {
-    border: 2px solid #ffd700;
-    background-color: #333333;
-}
-
-/* Ensure marked cells fill is prioritized over highlighted state */
-#techniques-table td.marked.effect-highlight {
-    background-color: #388E3C !important; /* Keep the marked fill color */
-    color: #ffffff !important; /* Keep text color consistent */
-}
-
-/* Group dividers to separate Ranks */
-#techniques-table tr.group-divider td {
-    border-top: 4px dashed #21313a; /* Use a dashed line with a subtle blue-grey color */
-    padding-top: 10px; /* Add some spacing to distinguish the groups */
-}
-
-/* Hover effect */
-#techniques-table tr:hover {
-    background-color: #3a3a3a;
-}
-
-/* List styling for effects */
-#effects-list {
-    list-style: none;
-    padding: 0;
+h1 {
     margin: 0;
 }
 
-#effects-list li {
-    cursor: pointer;
-    padding: 8px 10px;
-    transition: background-color 0.3s;
+.section {
+    margin: 20px;
+    padding: 20px;
 }
 
-/* Active effect style in sidebar */
-#effects-list li.active {
-    background-color: #388E3C; /* Indicate which effect is currently highlighted */
+.section h2 {
+    color: #FF8C00;
+    border-bottom: 1px solid #FF8C00;
+    padding-bottom: 5px;
+}
+
+/* Ability Grouping */
+.ability-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ability-box {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ability-box input {
+    margin-top: 10px;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    border: 1px solid #FF8C00;
+    border-radius: 4px;
+    background-color: #2c2c2c;
     color: #ffffff;
 }
 
-#effects-list li:hover {
-    background-color: #555;
+.citrine-label {
+    margin-top: 10px;
+    color: #FFD700; /* Citrine-like color */
 }
 
-/* Search bar styling */
-#effects-search {
-    width: 90%; /* Adjust the width to fit better within the sidebar */
-    padding: 6px; /* Slightly reduce padding for a compact look */
-    margin: 5px auto 10px; /* Center the search bar and add spacing */
-    display: block; /* Ensure it centers within the sidebar */
-    border: 1px solid #444;
-    border-radius: 4px;
-    background-color: #2c2c2c;
-    color: #e0e0e0;
-    font-size: 14px;
-    box-sizing: border-box; /* Include padding in the width calculation */
-}
-
+/* Adjust the button styles */
 button {
-    padding: 5px 10px;
-    background-color: #388E3C; /* Darker green for better contrast */
-    color: #ffffff; /* White text */
+    padding: 10px;
+    background-color: #388E3C;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
     transition: background-color 0.3s ease;
-    font-weight: bold; /* Make the text bold for better readability */
 }
 
 button:hover {
-    background-color: #2e7d32; /* Slightly darker green on hover */
-}
-
-/* Styling for the reset button */
-.reset-button {
-    position: sticky;
-    bottom: 0;
-    width: 90%;
-    padding: 10px;
-    margin: 10px auto;
-    background-color: #388E3C;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.reset-button:hover {
-    background-color: #388E3C;
-}
-
-/* Darken the Technique Name column to indicate it is not clickable */
-#techniques-table td:nth-child(2) {
-    background-color: #1b1a1a; /* Slightly darker background */
-    color: #bbbbbb; /* Lighter text to contrast */
-    cursor: default; /* Default cursor to show it's not clickable */
-    font-weight: bold; /* Make the text bold */
-}
-
-/* Credits outside the summary sidebar */
-.credits-outside {
-    font-size: 12px;
-    text-align: center;
-    color: #888;
-    margin-top: auto; /* Push the credits to the bottom */
-    padding: 10px 0;
-    opacity: 0.7; /* Slight transparency */
-}
-
-.credits-outside:hover {
-    opacity: 1;
+    background-color: #2e7d32;
 }

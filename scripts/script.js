@@ -1,147 +1,117 @@
-// Ensure DOM is fully loaded before running any script
-document.addEventListener('DOMContentLoaded', () => {
-    fetchData();
-});
-
-// Function to fetch JSON data
-async function fetchData() {
+// Load JSON data and initialize the table
+async function loadAbilities() {
     try {
         const abilitiesResponse = await fetch('data/abilities.json');
-        const abilitiesData = await abilitiesResponse.json();
-        displayAbilities(abilitiesData); // Populates the table with abilities
-        loadSavedLevels();  // Load saved levels from local storage
+        const abilities = await abilitiesResponse.json();
+
+        const cultivationStagesResponse = await fetch('data/cultivationstages.json');
+        const cultivationStages = await cultivationStagesResponse.json();
+
+        const breakthroughsResponse = await fetch('data/breakthroughs.json');
+        const breakthroughs = await breakthroughsResponse.json();
+
+        // Function to display abilities dynamically
+        displayAbilities(abilities, cultivationStages, breakthroughs);
     } catch (error) {
-        console.error('Failed to load abilities:', error);
+        console.error("Failed to load abilities:", error);
     }
 }
 
-// Function to populate the abilities table from the JSON data
-function displayAbilities(abilitiesData) {
-    const tableBody = document.querySelector('#techniques-table tbody');
+// Function to fetch the breakthroughs based on default and exceptions
+function getBooksForLevel(stage, level, breakthroughs) {
+    // Check if the stage has an exception
+    const stageBreakthroughs = breakthroughs.exceptions[stage] || breakthroughs.default;
     
-    if (!tableBody) {
-        console.error('Table body not found!');
-        return;
+    // Find the corresponding breakthrough for the given level
+    const matchingBreakthrough = stageBreakthroughs.find(b => level >= b.level);
+    
+    return matchingBreakthrough ? matchingBreakthrough.books : 0;
+}
+
+// Function to calculate citrine cost for a given ability level
+function calculateCitrineCost(ability, level, breakthroughs) {
+    let totalBooks = 0;
+
+    // Loop through the level in increments of 10, getting the book requirement at each increment
+    for (let i = 0; i <= level; i += 10) {
+        const booksForLevel = getBooksForLevel(ability.cultivationStage, i, breakthroughs);
+        totalBooks += booksForLevel;
     }
 
-    tableBody.innerHTML = ''; // Clear the table body before populating
-
-    abilitiesData.forEach((ability) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${ability.abilityName}</td>
-            <td>${ability.cultivationStage}</td>
-            <td>${ability.maxLevel}</td>
-            <td>${ability.abilityType}</td>
-            <td>
-                <input type="number" min="0" max="${ability.maxLevel}" step="10" value="0" 
-                    data-ability="${ability.abilityName}" data-stage="${ability.cultivationStage}" 
-                    onchange="handleLevelInput(this)">
-            </td>
-            <td class="citrine-cost">0</td>
-        `;
-        tableBody.appendChild(row);
-    });
-
-    updateTotalCitrineCost();  // Update total citrine cost when the table is populated
+    return totalBooks * ability.citrinePerBook;
 }
 
-// Breakthrough levels and books required (global configuration)
-const breakthroughBooks = {
-    0: 0,
-    20: 4,
-    30: 6,
-    40: 8,
-    50: 14,
-    60: 20,
-    70: 26,
-    80: 35,
-    90: 40,
-    100: 45
-};
+// Function to display abilities organized by cultivation stages
+function displayAbilities(abilities, cultivationStages, breakthroughs) {
+    const mainContainer = document.querySelector('.content-container');
+    mainContainer.innerHTML = ''; // Clear the content container
 
-// Citrine cost per book by cultivation stage
-const cultivationStages = {
-    "Connection": 100,
-    "Foundation": 150,
-    "Virtuoso": 240,
-    "Nascent": 280,
-    "Incarnation": 400,
-    "Incarnation extra": 450,
-    "Immortal's Will": 200,
-    "Voidbreak 1": 150,
-    "Voidbreak 1 - element": 200,
-    "Voidbreak 2": 200,
-    "Voidbreak 2 - element": 280,
-    "Wholeness 1": 280,
-    "Wholeness 1 - element": 400,
-    "Wholeness 2": 400,
-    "Wholeness 2 - element": 450,
-    "Perfection": 500,
-    "Perfection - element": 500,
-    "Nirvana": 500,
-    "Nirvana - element": 500
-};
+    cultivationStages.forEach((stage) => {
+        // Create a section for each stage
+        const section = document.createElement('div');
+        section.classList.add('section');
 
-// Function to calculate and update the Citrine cost based on input level
-function handleLevelInput(input) {
-    const level = parseInt(input.value);
-    const abilityName = input.getAttribute('data-ability');
-    const cultivationStage = input.getAttribute('data-stage');
-    const citrineCostCell = input.parentElement.nextElementSibling;
+        const stageHeader = document.createElement('h2');
+        stageHeader.textContent = stage.name;
+        section.appendChild(stageHeader);
 
-    const citrineCost = calculateCitrineCost(level, cultivationStage);
-    citrineCostCell.textContent = citrineCost;
+        const abilityGroup = document.createElement('div');
+        abilityGroup.classList.add('ability-group');
 
-    saveUserLevel(abilityName, level); // Save the user's input
-    updateTotalCitrineCost(); // Update the total Citrine cost across all inputs
-}
+        // Get the abilities that belong to this stage
+        const stageAbilities = abilities.filter(
+            (ability) => ability.cultivationStage === stage.name
+        );
 
-// Function to calculate the total Citrine cost for a specific level and cultivation stage
-function calculateCitrineCost(level, stage) {
-    let totalCost = 0;
+        stageAbilities.forEach((ability) => {
+            const abilityBox = document.createElement('div');
+            abilityBox.classList.add('ability-box');
 
-    // Loop through each breakthrough point
-    for (const [breakpoint, booksRequired] of Object.entries(breakthroughBooks)) {
-        // If the user's level is greater than the current breakpoint, add the cost
-        if (level >= breakpoint) {
-            const citrinePerBook = cultivationStages[stage] || 0;
-            totalCost += booksRequired * citrinePerBook;
-        }
-    }
+            const abilityLabel = document.createElement('span');
+            abilityLabel.textContent = ability.abilityName;
 
-    return totalCost;
-}
+            const input = document.createElement('input');
+            input.type = 'number';
+            input.min = 0;
+            input.max = ability.maxLevel;
+            input.value = localStorage.getItem(ability.abilityName) || 0;
+            input.dataset.ability = ability.abilityName;
 
-// Function to update the total Citrine cost based on all input levels
-function updateTotalCitrineCost() {
-    let totalCitrine = 0;
-    document.querySelectorAll('#techniques-table .citrine-cost').forEach(cell => {
-        totalCitrine += parseInt(cell.textContent) || 0;
-    });
-    document.getElementById('total-citrine').textContent = `Total Citrine: ${totalCitrine}`;
-}
+            const citrineLabel = document.createElement('span');
+            citrineLabel.classList.add('citrine-label');
+            const currentCitrine = calculateCitrineCost(
+                ability,
+                input.value,
+                breakthroughs
+            );
+            citrineLabel.textContent = `Citrine: ${currentCitrine}`;
 
-// Function to save user levels in local storage
-function saveUserLevel(abilityName, level) {
-    const savedLevels = JSON.parse(localStorage.getItem('userLevels') || '{}');
-    savedLevels[abilityName] = level;
-    localStorage.setItem('userLevels', JSON.stringify(savedLevels));
-}
+            // Event listener for input change
+            input.addEventListener('input', function () {
+                const newLevel = parseInt(input.value);
+                const citrineCost = calculateCitrineCost(
+                    ability,
+                    newLevel,
+                    breakthroughs
+                );
 
-// Function to load saved user levels from local storage
-function loadSavedLevels() {
-    const savedLevels = JSON.parse(localStorage.getItem('userLevels') || '{}');
-    document.querySelectorAll('#techniques-table input').forEach(input => {
-        const abilityName = input.getAttribute('data-ability');
-        if (savedLevels[abilityName]) {
-            input.value = savedLevels[abilityName];
-            handleLevelInput(input); // Trigger the Citrine cost calculation
-        }
+                citrineLabel.textContent = `Citrine: ${citrineCost}`;
+                localStorage.setItem(ability.abilityName, newLevel);
+            });
+
+            // Append to the ability box
+            abilityBox.appendChild(abilityLabel);
+            abilityBox.appendChild(input);
+            abilityBox.appendChild(citrineLabel);
+
+            // Append ability box to the ability group
+            abilityGroup.appendChild(abilityBox);
+        });
+
+        section.appendChild(abilityGroup);
+        mainContainer.appendChild(section);
     });
 }
 
-// On page load, fetch data and populate the table
-document.addEventListener('DOMContentLoaded', () => {
-    fetchData();
-});
+// Load abilities when the page loads
+window.addEventListener('DOMContentLoaded', loadAbilities);
