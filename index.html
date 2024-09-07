@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sidebar for total citrine -->
-    <div id="total-stats-sidebar">
-        <h2>Total Citrine</h2>
-        <div id="total-citrine">Total Citrine: 0</div>
+    <!-- Sidebar container for total citrine and path selection -->
+    <div id="sidebar-container">
+        <!-- Sidebar for total citrine -->
+        <div id="total-stats-sidebar">
+            <h2>Total Citrine</h2>
+            <div id="total-citrine">Total Citrine: 0</div>
+        </div>
+
+        <!-- Tabs for path selection -->
+        <div class="path-selector">
+            <button class="tab-button active" data-path="Magicka">Magicka</button>
+            <button class="tab-button" data-path="Corporia">Corporia</button>
+            <button class="tab-button" data-path="Swordia">Swordia</button>
+        </div>
     </div>
 
     <!-- Main container for the content and tabs -->
     <div class="main-container">
         <h1>Citrine Ability Tracker</h1>
-
-        <!-- Tabs for path selection -->
-        <div class="path-tabs">
-            <button class="tab-button active" data-path="Magicka">Magicka</button>
-            <button class="tab-button" data-path="Corporia">Corporia</button>
-            <button class="tab-button" data-path="Swordia">Swordia</button>
-        </div>
 
         <!-- Content container where abilities will be displayed -->
         <div class="content-container"></div>

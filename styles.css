@@ -21,22 +21,50 @@ h1 {
     text-align: center;
 }
 
-/* Tab button styling */
-.path-tabs {
+/* Sidebar container for total stats and path selection */
+#sidebar-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 200px;
     margin-bottom: 20px;
+}
+
+/* Sidebar for total stats */
+#total-stats-sidebar {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    margin-bottom: 20px;  /* Spacing between total citrine and path tabs */
+}
+
+#total-citrine {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffc107;
+}
+
+/* Adjust path selector below the total citrine */
+.path-selector {
+    display: flex;
+    flex-direction: column;
 }
 
 .tab-button {
     background-color: #414040;
     color: white;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 0 10px;
+    padding: 10px;
+    margin-bottom: 10px; /* Vertical spacing between buttons */
     border-radius: 4px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .tab-button.active {
@@ -47,13 +75,19 @@ h1 {
     background-color: #388E3C;
 }
 
+/* Main content container for the abilities */
+.main-container {
+    margin-left: 240px; /* Adjust based on the width of the sidebar */
+    margin-top: 20px;
+    width: calc(100% - 260px);
+}
+
 /* Content container */
 .content-container {
-    width: 80%;
-    max-width: 1200px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 1200px;
 }
 
 /* Input styling */
@@ -107,24 +141,4 @@ input[type="number"] {
 .citrine-label {
     color: #ffc107;
     font-size: 12px; /* Smaller font for citrine label */
-}
-
-/* Sidebar for total stats */
-#total-stats-sidebar {
-    position: sticky;
-    top: 20px;
-    width: 200px;
-    background-color: #1e1e1e;
-    padding: 15px;
-    border-radius: 8px;
-    color: #fff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-#total-citrine {
-    font-size: 18px;
-    font-weight: bold;
-    color: #ffc107;
 }
