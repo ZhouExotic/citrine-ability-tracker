@@ -1,78 +1,78 @@
 [
     {
-        "stage": "Connection",
+        "cultivationStage": "Connection",
         "citrinePerBook": "100"
     },
     {
-        "stage": "Foundation",
+        "cultivationStage": "Foundation",
         "citrinePerBook": "150"
     },
     {
-        "stage": "Virtuoso",
+        "cultivationStage": "Virtuoso",
         "citrinePerBook": "240"
     },
     {
-        "stage": "Nascent",
+        "cultivationStage": "Nascent",
         "citrinePerBook": "280"
     },
     {
-        "stage": "Incarnation",
+        "cultivationStage": "Incarnation",
         "citrinePerBook": "400"
     },
     {
-        "stage": "Incarnation extra",
+        "cultivationStage": "Incarnation extra",
         "citrinePerBook": "450"
     },
     {
-        "stage": "Immortal's Will",
+        "cultivationStage": "Immortal's Will",
         "citrinePerBook": "200"
     },
     {
-        "stage": "Voidbreak 1",
+        "cultivationStage": "Voidbreak 1",
         "citrinePerBook": "150"
     },
     {
-        "stage": "Voidbreak 1 - element",
+        "cultivationStage": "Voidbreak 1 - element",
         "citrinePerBook": "200"
     },
     {
-        "stage": "Voidbreak 2",
+        "cultivationStage": "Voidbreak 2",
         "citrinePerBook": "200"
     },
     {
-        "stage": "Voidbreak 2 - element",
+        "cultivationStage": "Voidbreak 2 - element",
         "citrinePerBook": "280"
     },
     {
-        "stage": "Wholeness 1",
+        "cultivationStage": "Wholeness 1",
         "citrinePerBook": "280"
     },
     {
-        "stage": "Wholeness 1 - element",
+        "cultivationStage": "Wholeness 1 - element",
         "citrinePerBook": "400"
     },
     {
-        "stage": "Wholeness 2",
+        "cultivationStage": "Wholeness 2",
         "citrinePerBook": "400"
     },
     {
-        "stage": "Wholeness 2 - element",
+        "cultivationStage": "Wholeness 2 - element",
         "citrinePerBook": "450"
     },
     {
-        "stage": "Perfection",
+        "cultivationStage": "Perfection",
         "citrinePerBook": "500"
     },
     {
-        "stage": "Perfection - element",
+        "cultivationStage": "Perfection - element",
         "citrinePerBook": "500"
     },
     {
-        "stage": "Nirvana",
+        "cultivationStage": "Nirvana",
         "citrinePerBook": "500"
     },
     {
-        "stage": "Nirvana - element",
+        "cultivationStage": "Nirvana - element",
         "citrinePerBook": "500"
     }
 ]
